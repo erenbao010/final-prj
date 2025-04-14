@@ -19,12 +19,15 @@ import modelImg4 from "assest/img/model4.svg";
 import modelImg5 from "assest/img/model5.svg";
 import modelImg6 from "assest/img/model6.svg";
 import modelImg7 from "assest/img/model7.svg";
-import logo1 from "assest/img/1024px-Zara_Logo1.svg";
-import logo2 from "assest/img/1024px-Zara_Logo2.svg";
-import filterIcon from "assest/img/filter.svg";
 
 import Footer from "components/Footer/Footer";
 import socialImg from "assest/img/image-product-8.svg";
+import { Button } from "components/Button/Button";
+import LoginButton from "components/Button/ButtonClickLogin";
+import SideBar from "components/SideBar/Sidebar";
+import BookList from "pages/BookList";
+import BookDetails from "pages/BookDetails";
+import { Link } from "react-router-dom";
 
 const LayoutStyled = styled.div`
   /* position: relative; */
@@ -466,6 +469,7 @@ const WrapperItemStyled = styled.div`
 const PrimaryLayout = ({ children }) => {
   return (
     <LayoutStyled>
+      <SideBar></SideBar>
       <HeaderStyled>
         <div className="header-left">
           <img classname="search-Icon" src={searchIcon} alt="searchicon"></img>
@@ -474,7 +478,10 @@ const PrimaryLayout = ({ children }) => {
         <div className="header-right">
           <div className="p1">
             <img className="profile_icon" src={profileIcon} alt="Profile" />
-            <p className="text-header-profile">Account</p>
+            <p className="text-header-profile">
+              {" "}
+              <LoginButton />{" "}
+            </p>
           </div>
           <div className="p2">
             <img
@@ -482,7 +489,9 @@ const PrimaryLayout = ({ children }) => {
               src={shoppingIcon}
               alt="Shopping"
             ></img>
-            <div className="text-header-shoppingcart">Shopping</div>
+            <Link to="/cart">
+              <div className="text-header-shoppingcart">Shopping</div>
+            </Link>
           </div>
         </div>
       </HeaderStyled>
@@ -498,7 +507,7 @@ const PrimaryLayout = ({ children }) => {
           </div>
           <div className="btn1">
             <img src={bagIcon} alt="Bag" />
-            <button className="btn-text-content">Shop Now</button>
+            <button className="btn-text-content"> Shop Now</button>
           </div>
         </div>
         <div className="content-right-top">
@@ -506,6 +515,7 @@ const PrimaryLayout = ({ children }) => {
           <img className="model1" src={modelImg} alt="model" />
         </div>
       </ContentStyled>
+
       <ContentStyled2>
         <div className="left-model">
           <p className="text-content2">Explore new and popular styles</p>
@@ -552,59 +562,9 @@ const PrimaryLayout = ({ children }) => {
           </button>
         </div>
 
-        <div className="wrapper-item">
-          <Category
-            image={modelImg5}
-            descripton={"Adicolor Classics Joggers"}
-            title={"Dress"}
-            price={"13.22"}
-          ></Category>
-          <Category
-            image={modelImg5}
-            descripton={"Adicolor Classics Joggers"}
-            title={"Dress"}
-            price={"13.22"}
-          ></Category>
-          <Category
-            image={modelImg5}
-            descripton={"Adicolor Classics Joggers"}
-            title={"Dress"}
-            price={"13.22"}
-          ></Category>
-          <Category
-            image={modelImg5}
-            descripton={"Adicolor Classics Joggers"}
-            title={"Dress"}
-            price={"13.22"}
-          ></Category>
-          <Category
-            image={modelImg5}
-            descripton={"Adicolor Classics Joggers"}
-            title={"Dress"}
-            price={"13.22"}
-          ></Category>
-          <Category
-            image={modelImg5}
-            descripton={"Adicolor Classics Joggers"}
-            title={"Dress"}
-            price={"13.22"}
-          ></Category>
-          <Category
-            image={modelImg5}
-            descripton={"Adicolor Classics Joggers"}
-            title={"Dress"}
-            price={"13.22"}
-          ></Category>
-          <Category
-            image={modelImg5}
-            descripton={"Adicolor Classics Joggers"}
-            title={"Dress"}
-            price={"13.22"}
-          ></Category>
-        </div>
+        <div className="wrapper-item"></div>
       </WrapperItemStyled>
-      <Banner>
-      </Banner>
+      <Banner></Banner>
       <ContentStyled3>
         <p className="text1">Follow products and discounts on Instagram</p>
         <div>

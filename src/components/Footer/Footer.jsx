@@ -7,24 +7,10 @@ import { ReactComponent as Facebook } from "assest/img/facebook.svg";
 import { ReactComponent as Twitter} from "assest/img/twitter.svg";
 import { ReactComponent as Instagram} from "assest/img/instagram.svg";
 import { ReactComponent as Linkedin} from "assest/img/linkedin.svg";
-import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebookF,
-  faTwitter,
-  faLinkedinIn,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import { useEffect } from "react";
 
-library.add(
-  faCheckSquare,
-  faCoffee,
-  faFacebookF,
-  faTwitter,
-  faLinkedinIn,
-  faInstagram
-);
+
 // scroll to top
 const ScrollToTop = () => {
   window.scrollTo({

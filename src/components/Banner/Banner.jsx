@@ -24,12 +24,16 @@ text-transform: capitalize;
   .right-banner {
     position: absolute;
     margin-left: 1038px;
+    
   }
   .left-banner {
 background-color: black;
     position: relative;
     width: 100%;
     margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   
   }
   .text2 {
@@ -54,6 +58,12 @@ gap: 8px;
 width: 237px;
 height: 72px;
   }
+  .logo1 {
+    /* background-image: unset; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `;
 
 const Banner = () => {
@@ -64,13 +74,13 @@ const Banner = () => {
         </div>
       <div className="right-banner">
       <img src={logo2} alt="Logo-ZARA" />
-        <img src={logo1} alt="Logo-ZARA" />
+        <img className="logo1" src={logo1} alt="Logo-ZARA" />
         <p className="text2">Lustrous yet understated. The new evening
 wear collection exclusively offered at the
 reopened Giorgio Armani boutique in Los
 Angeles.</p>
        
-        <button className="collection" >See Collection</button>
+        <button className="collection" >See Collection BST</button>
       </div>
     </BannerStyled>
   );
