@@ -16,21 +16,26 @@ import Home from "containers/Home";
 import PrimaryLayout2 from "components/Layout/Layout3";
 import Register from "components/Register/Register";
 import ListBookCart from "components/ListBookCart";
-import Component from "test";
-import { useState } from "react";
-function App() {
-  const [showCounter, setShowCounter] = useState(false);
-  console.log(showCounter);
-  const toggleCounter = () => {
-    setShowCounter(!showCounter);
-  };
 
+function App() {
+  useEffect(() => {
+    document.title = "BookS Store";
+  }, []);
   return (
-    <div>
-      <button onClick={toggleCounter}>
-        {showCounter ? "Hide Counter" : "Show Counter"}
-      </button>
-      {showCounter && <Dashboard />}
+    <div className="App">
+      <PrimaryLayout2></PrimaryLayout2>
+
+      <Routes>
+        <Route element={<PrimaryLayout />}>
+          <Route path="/" element={<Header />} />
+        </Route>
+
+        <Route path="/list" element={<ListBookCart />} />
+      </Routes>
+      <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
   );
 }

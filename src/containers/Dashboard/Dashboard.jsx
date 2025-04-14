@@ -8,7 +8,7 @@ const Dashboard = () => {
   useEffect(() => {
     let isMounted = true;
 
-    fetch("https://jsonplaceholder.typicode.com/posts", {
+    fetch("http://localhost:8081/identity/users", {
       credentials: "include",
     })
       .then((res) => {
@@ -33,14 +33,18 @@ const Dashboard = () => {
 
   return (
     <div>
-    {user ? (
-      user.map(dat => ( // Sử dụng optional chaining (?.) để tránh lỗi nếu data là null/undefined
-        <h1 key={dat.id}>Xin chào, {dat.title}</h1> // Thêm key unique (ví dụ: dat.id)
-      ))
-    ) : (
-      <p>⏳ Đang kết nối...</p>
-    )}
-  </div>
+      {user ? (
+        user.map(
+          (
+            dat // Sử dụng optional chaining (?.) để tránh lỗi nếu data là null/undefined
+          ) => (
+            <h1 key={dat.id}>Xin chào, {dat.title}</h1> // Thêm key unique (ví dụ: dat.id)
+          )
+        )
+      ) : (
+        <p>⏳ Đang kết nối...</p>
+      )}
+    </div>
   );
 };
 
