@@ -27,7 +27,7 @@ const Dashboard = () => {
       });
 
     return () => {
-      isMounted = false;
+      isMounted = false; // clenaup function
     };
   }, []);
 
